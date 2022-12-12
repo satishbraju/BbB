@@ -28,7 +28,7 @@ jobs:
         run: ls /__w
 
       - name: Build
-        run: bazel build //... bazel build //... --bes_results_url=https://app.buildbuddy.io/invocation/ --bes_backend=grpcs://remote.buildbuddy.io --remote_header='BB' --remote_executor=grpcs://remote.buildbuddy.io
+        run: bazel build //... --remote_executor=grpcs://remote.buildbuddy.io
 
       - name: Create work directory
         run: mkdir Build
