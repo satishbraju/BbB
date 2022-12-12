@@ -1,0 +1,46 @@
+name: Build
+on:
+  push:
+ 
+  pull_request:
+    branches: [satish-dev, sbgd-dev]
+ 
+jobs:
+  Build-Bazel:
+    runs-on: ubuntu-latest
+    
+    container:
+      image: l.gcr.io/google/bazel:latest
+      options: --user root
+      
+      env:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3 
+
+      - name: Check work folder
+        run: pwd
+        
+      - name: Check rc file
+        run: ls /__w
+
+      - name: Build
+        run: bazel build //... --remote_executor=grpcs://remote.buildbuddy.io
+
+      - name: Create work directory
+        run: mkdir Build
+
+      - name: Add artifacts to downlads
+        run: cp -R ./bazel-bin/* Build
+
+      - name: Create tar
+        run: tar cvf build.tar Build/* 
+
+      - name: Upload artifcats
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: Build
