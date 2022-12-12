@@ -3,7 +3,7 @@ on:
   push:
  
   pull_request:
-    branches: [main, satish-dev, sbgd-dev]
+    branches: [satish-dev, sbgd-dev]
  
 jobs:
   Build-Bazel:
@@ -34,7 +34,7 @@ jobs:
         run: mkdir Build
 
       - name: Add artifacts to downlads
-        run: cp -R ./bazel-bin/exp_c/myProj/* Build
+        run: cp -R ./bazel-bin/BbB/* Build
 
       - name: Create tar
         run: tar cvf build.tar Build/* 
