@@ -1,0 +1,18 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+  name = "CBuild",
+  srcs = ["c/example1.c"],
+)
+cc_library(
+  name = "CBuild2",
+  srcs = ["c/example2.c"],
+)
+cc_library(
+  name = "CPBuild1",
+  srcs = ["cpp/example3.cpp"],
+)
+cc_library(
+  name = "CPBuild2",
+  srcs = ["cpp/example4.cpp"],
+)
