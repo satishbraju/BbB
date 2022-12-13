@@ -16,3 +16,9 @@ cc_library(
   name = "CPBuild2",
   srcs = ["cpp/example4.cpp"],
 )
+genrule(
+    name = "exec_targs",
+    srcs = [dat/dat.txt],
+    outs = ["data.dat"],
+    cmd = "sleep 5 && echo 'Hello Satish!' >$@",
+)
