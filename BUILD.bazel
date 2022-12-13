@@ -22,3 +22,9 @@ genrule(
     outs = ["data.dat"],
     cmd = "sleep 5 && cat $(SRCS) >$@",
 )
+genrule(
+    name = "copy_echo",
+    srcs = [ ],
+    outs = ["echo.dat"],
+    cmd = "sleep 5 && echo 'This is a general rule in Bazel' >$@",
+)
