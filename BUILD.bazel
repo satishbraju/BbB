@@ -18,7 +18,7 @@ cc_library(
 )
 genrule(
     name = "exec_targs",
-    srcs = [dat/dat.txt],
+    srcs = ["dat/dat.txt"],
     outs = ["data.dat"],
     cmd = "sleep 5 && echo 'Hello Satish!' >$@",
 )
