@@ -7,7 +7,7 @@ file = "C:/git_ws/BbB/dat/time.txt"
 
 i = 1
 
-while (i <= 100):
+while (i <= 20):
     print(i)
     source =  open(file, 'a' )
     temp = localtime
@@ -15,3 +15,4 @@ while (i <= 100):
     i += 1
     os.system('git add . ')
     os.system('git commit -m "updated version')
+    os.system('git push')
