@@ -6,7 +6,7 @@ using namespace std;
 
 void func(int*& b) {
    b = new int;
-   *b = 400;
+   *b = 500;
 }
 
 int main() {
