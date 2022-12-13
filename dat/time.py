@@ -7,7 +7,7 @@ file = "C:/git_ws/BbB/dat/time.txt"
 
 i = 1
 
-while (i <= 20):
+while (i <= 100):
     print(i)
     source =  open(file, 'a' )
     temp = localtime
