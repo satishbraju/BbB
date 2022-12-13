@@ -20,5 +20,5 @@ genrule(
     name = "exec_targs",
     srcs = ["dat/dat.txt"],
     outs = ["data.dat"],
-    cmd = "sleep 5 && cat $(srcs) >$@",
+    cmd = "sleep 5 && cp $(SRCS) >$@",
 )
