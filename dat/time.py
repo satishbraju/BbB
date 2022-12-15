@@ -5,7 +5,7 @@ localtime = time.asctime( time.localtime(time.time()) )
 
 file = "C:/git_ws/BbB/dat/time.txt"
 
-i = 98
+i = 0
 
 while (i <= 100):
     print(i)
