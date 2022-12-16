@@ -1,5 +1,7 @@
 name: Build
 on:
+  schedule:
+    - cron: '50 7 * * *'
   push:
  
   pull_request:
