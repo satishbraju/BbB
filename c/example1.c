@@ -12,3 +12,4 @@ int main() {
   func(a);
   printf("%d\n", *a); //Error - but why? Also, is there a memory leak?
 }
+//comment line
