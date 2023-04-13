@@ -1,0 +1,29 @@
+stages:
+  - build
+  - static_analysis
+  - deploy
+  - test
+  - test_status
+
+test:
+  stage: test
+  script: echo "Running tests"
+
+build:
+  stage: build
+  script: echo "Building the app"
+  
+static_analysis:
+  stage: static_analysis
+  script: echo "executing static analysis"
+
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  
+  environment:
+    name: staging
+    url: https://staging.example.com
+  only:
+  - master
